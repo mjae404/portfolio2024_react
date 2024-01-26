@@ -1,0 +1,59 @@
+.navigation {
+  position: fixed;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: none;
+
+  @media screen and (min-width:1200px) {
+    display: block;
+  }
+
+  &-list {
+    text-align: right;
+  }
+
+  &-item {
+    vertical-align: middle;
+    line-height: 1.5;
+  }
+
+  &-button {
+    position: relative;
+    padding-right: 30px;
+    letter-spacing: .4px;
+    font-family: 'Abril Fatface', serif;
+    font-style: italic;
+    color: transparent;
+    transition: color .4s;
+
+    &:hover {
+      color: #222;
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      display: block;
+      background-color: #bbb;
+      height: 1px;
+      width: 20px;
+      content: '';
+
+      @at-root .navigation-item:nth-child(even) & {
+        width: 12px;
+      }
+    }
+
+    @at-root .active & {
+      color: #222;
+
+      &::after {
+        background-color: #222;
+      }
+    }
+  }
+}

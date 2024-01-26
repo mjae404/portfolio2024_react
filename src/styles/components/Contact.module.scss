@@ -1,0 +1,80 @@
+.contact {
+  &-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    @media screen and (min-width:576px) {
+      align-items: center;
+    }
+
+    &::before {
+      display: none;
+      position: absolute;
+      right: 0;
+      bottom: 50px;
+      width: 400px;
+      height: 400px;
+      background: url("../../assets/images/contact-background.png") no-repeat right bottom / contain;
+      content: '';
+
+      @media screen and (min-width:768px) {
+        display: block;
+      }
+    }
+  }
+
+  &-title {
+    font-size: 32px;
+    margin: 0 auto 30px 0;
+    line-height: 1;
+    border-bottom: 7px solid #222;
+    text-transform: uppercase;
+
+    @media screen and (min-width:576px) {
+      margin: 0 0 30px 0;
+    }
+
+    @media screen and (min-width:992px) {
+      font-size: 44px;
+      margin-bottom: 50px;
+    }
+
+    .point {
+      font-size: 70px;
+      line-height: 32px;
+
+      @media screen and (min-width:992px) {
+        line-height: 40px;
+      }
+    }
+  }
+
+  &-desc {
+    font-size: 14px;
+    margin-bottom: 20px;
+
+    @media screen and (min-width:576px) {
+      font-size: 15px;
+      text-align: center;
+    }
+  }
+
+  &-mail {
+    color: #b34831;
+    border-bottom: 1px dashed #b34831;
+    font-family: 'Abril Fatface', serif;
+    font-style: italic;
+    transition: all .4s;
+
+    &:hover {
+      color: #222;
+      border-color: #222;
+    }
+
+    &-text {
+      font-size: 20px;
+    }
+  }
+}

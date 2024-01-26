@@ -1,0 +1,240 @@
+.visual {
+  &-area {
+    width: 100%;
+    height: 100vh;
+
+    &-inner {
+      max-width: 1200px;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scroll-btn {
+      position: absolute;
+      left: 50%;
+      bottom: 75px;
+      transform: translateX(-50%);
+      text-align: center;
+
+      @media screen and (min-width:768px) {
+        bottom: 20px;
+      }
+
+      &-link {
+        display: inline-block;
+        letter-spacing: 2px;
+      }
+
+      &-text {
+        font-size: 14px;
+        color: #000;
+      }
+
+      .mouse {
+        position: relative;
+        display: block;
+        width: 25px;
+        height: 40px;
+        box-sizing: border-box;
+        border: 2px solid #000;
+        border-radius: 23px;
+
+        span {
+          position: absolute;
+          display: block;
+          top: 29%;
+          left: 50%;
+          width: 8px;
+          height: 8px;
+          margin: -4px 0 0 -4px;
+          background: #000;
+          border-radius: 50%;
+          animation: ani-mouse 2.5s linear infinite;
+        }
+      }
+    }
+  }
+
+  &-title {
+    font-weight: normal;
+    text-align: center;
+    font-family: 'Abril Fatface', serif;
+    font-style: italic;
+    display: block;
+    font-size: 40px;
+
+    @media screen and (min-width:576px) {
+      font-size: 60px;
+    }
+
+    @media screen and (min-width:768px) {
+      font-size: 70px;
+    }
+
+    @media screen and (min-width:992px) {
+      font-size: 80px;
+    }
+  }
+
+  &-text {
+    letter-spacing: 1.7px;
+    font-size: 14px;
+
+    @media screen and (min-width:768px) {
+      font-size: 16px;
+    }
+
+    @media screen and (min-width:1200px) {
+      font-size: 20px;
+    }
+
+    &-wrap {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.ellipses {
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  border-style: solid;
+
+  &-container {
+    width: 85vw;
+    height: 85vw;
+    border-radius: 50%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+
+    @media screen and (min-width:576px) {
+      width: 70vw;
+      height: 70vw;
+    }
+
+    @media screen and (min-width:768px) {
+      width: 54.17vw;
+      height: 54.17vw;
+    }
+
+    @media screen and (min-width:992px) {
+      width: 650px;
+      height: 650px;
+    }
+  }
+
+  &-outer {
+    &-thin {
+      width: 100%;
+      height: 100%;
+      border-width: 1px;
+      border-color: rgba(9, 56, 62, 0.1);
+      animation: ellipsesOrbit 15s ease-in-out infinite;
+    }
+
+    &-thick {
+      width: 99.5%;
+      height: 99.5%;
+      border-color: #09383E transparent;
+      border-width: 2px;
+      transform: rotate(-45deg);
+      animation: ellipsesRotate 15s ease-in-out infinite;
+    }
+  }
+
+  &-orbit {
+    border-color: #222;
+    display: none;
+
+    @media screen and (min-width:992px) {
+      display: inline-block;
+      top: 50px;
+      right: 110px;
+      width: 30px;
+      height: 30px;
+    }
+
+    &:before {
+      border-radius: 50%;
+      background-color: #222;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      content: '';
+
+      @media screen and (min-width:992px) {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &-coords {
+    position: absolute;
+    bottom: 20px;
+    left: -110px;
+    font-size: 10px;
+    transform: rotate(-90deg) translateX(50%);
+    letter-spacing: 2px;
+    display: none;
+
+    @media screen and (min-width:1200px) {
+      display: inline-block;
+    }
+  }
+}
+
+@keyframes ellipsesRotate {
+  0% {
+    transform: rotate(-45deg);
+  }
+
+  100% {
+    transform: rotate(-405deg);
+  }
+}
+
+@keyframes ellipsesOrbit {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ani-mouse {
+  0% {
+    opacity: 1;
+    top: 29%;
+  }
+
+  15% {
+    opacity: 1;
+    top: 50%;
+  }
+
+  50% {
+    opacity: 0;
+    top: 50%;
+  }
+
+  100% {
+    opacity: 0;
+    top: 29%;
+  }
+}

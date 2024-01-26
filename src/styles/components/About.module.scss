@@ -1,0 +1,147 @@
+.about {
+  &-area {
+    @media screen and (min-width:992px) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-image-area {
+    @media screen and (min-width:992px) {
+      width: 50%;
+    }
+  }
+
+  &-text-area {
+    @media screen and (min-width:992px) {
+      width: 50%;
+    }
+  }
+
+  &-image {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    object-fit: cover;
+
+    &-area {
+      margin-bottom: 70px;
+      padding-right: 30px;
+      position: relative;
+      box-sizing: border-box;
+      height: 400px;
+
+      @media screen and (min-width:768px) {
+        height: 650px;
+      }
+
+      @media screen and (min-width:992px) {
+        height: 750px;
+        padding: 0;
+        margin: 0 100px 0 0;
+      }
+
+      &::after {
+        position: absolute;
+        top: 30px;
+        right: 0;
+        z-index: -1;
+        display: block;
+        width: calc(100% - 30px);
+        height: 100%;
+        border: 2px solid #222;
+        background-color: #fff;
+        content: '';
+
+        @media screen and (min-width:992px) {
+          right: -30px;
+        }
+      }
+    }
+  }
+
+  &-title {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-family: 'Abril Fatface', serif;
+    font-style: italic;
+    letter-spacing: 0;
+  }
+
+  &-skill {
+    &-list {
+      margin-top: 20px;
+    }
+
+    &-item {
+      text-transform: uppercase;
+      padding: 2px 15px;
+      border: 1px dashed #aaa;
+      border-radius: 50px;
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 10px;
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &-list {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px dashed #222;
+  }
+
+  &-item {
+    position: relative;
+
+    &:not(:first-child) {
+      margin-top: 35px;
+    }
+
+    &-title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 80px;
+      border-bottom: 1px solid #222;
+      font-family: Pretendard-Bold, sans-serif;
+    }
+
+    &-contents {
+      padding-left: 100px;
+      position: relative;
+      color: #acacac;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+
+      .point {
+        color: #222;
+        font-weight: normal;
+        display: block;
+
+        @media screen and (min-width:576px) {
+          margin-right: 5px;
+          display: inline;
+        }
+      }
+
+      &::before {
+        position: absolute;
+        top: 10px;
+        left: 85px;
+        border-radius: 50%;
+        display: block;
+        width: 10px;
+        height: 1px;
+        background-color: #222;
+        content: '';
+      }
+    }
+  }
+}
