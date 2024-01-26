@@ -16,6 +16,11 @@ function Stack() {
                         {stack.points.map((point, index) => (
                             <dd key={index} className={styles['stack-item-desc']}>{point}</dd>
                         ))}
+                        {stack.icons.map((icon, index) => (
+                            <dd key={index} className={styles['stack-item-icon']}>
+                                <img src={icon} alt="" className={styles['stack-item-icon-image']} />
+                            </dd>
+                        ))}
                     </div>
                 ))}
             </dl>

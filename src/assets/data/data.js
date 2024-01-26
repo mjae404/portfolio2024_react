@@ -1,3 +1,17 @@
+import html from "../icons/icon-html.svg";
+import css from "../icons/icon-css.svg";
+import react from "../icons/icon-react.svg";
+import storybook from "../icons/icon-storybook.svg";
+import scss from "../icons/icon-scss.svg";
+import photoshop from "../icons/icon-photoshop.svg";
+import illustrator from "../icons/icon-illustrator.svg";
+import figma from "../icons/icon-figma.svg";
+import zeplin from "../icons/icon-zeplin.svg";
+import vscode from "../icons/icon-vscode.svg";
+import git from "../icons/icon-git.svg";
+import gulp from "../icons/icon-gulp.svg";
+import jira from "../icons/icon-jira.svg";
+import confluence from "../icons/icon-confluence.svg";
 import weddingwebp from "../images/wedding.webp";
 import wedding from "../images/wedding.jpg";
 import portfolio2023webp from "../images/portfolio2022.webp";
@@ -70,6 +84,9 @@ const stacksData = [
             'React.js를 활용한 컴포넌트 형식의 퍼블리싱이 가능합니다.',
             'Storybook을 활용하여 디자인 가이드 형식의 컴포넌트 형태의 마크업을 작성할 수 있습니다.',
         ],
+        icons: [
+            html, css, react, scss, storybook
+        ]
     },
     {
         title: 'Design',
@@ -78,6 +95,9 @@ const stacksData = [
             '피그마를 활용하여 UX/UI 설계 및 프로토 타이핑이 가능합니다.',
             '애프터 이펙트 및 프리미어를 활용하여 기초적인 영상 작업이 가능합니다.',
         ],
+        icons: [
+            photoshop, illustrator, figma, zeplin
+        ]
     },
     {
         title: 'Tools',
@@ -88,6 +108,9 @@ const stacksData = [
             'npm을 활용하여 원하는 패키지 등을 설치하고 활용할 수 있습니다.',
             'Jira 및 Confluence를 활용하여 다른 사람과 협업하고 스케줄링하며, 문서를 공유할 수 있습니다.',
         ],
+        icons: [
+            vscode, git, gulp, jira, confluence
+        ]
     },
 ];
 
