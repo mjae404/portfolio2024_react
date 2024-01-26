@@ -1,0 +1,240 @@
+.work {
+  &-area {
+    position: relative;
+  }
+
+  &-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    line-height: 1;
+    border-bottom: 7px solid #222;
+    text-transform: uppercase;
+    display: inline-block;
+
+    @media screen and (min-width:992px) {
+      font-size: 44px;
+      margin-bottom: 50px;
+    }
+
+    .point {
+      font-size: 70px;
+      line-height: 32px;
+
+      @media screen and (min-width:992px) {
+        line-height: 40px;
+      }
+    }
+  }
+
+  &-swiper {
+    &-item {
+      padding: 0 0 100px;
+      box-sizing: border-box;
+      width: 100%;
+
+      &-inner {
+        @media screen and (min-width:992px) {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
+    &-image {
+      width: 100%;
+      vertical-align: top;
+
+      &-area {
+        position: relative;
+        padding-right: 30px;
+        margin-bottom: 70px;
+
+        @media screen and (min-width:992px) {
+          padding-right: 0;
+          width: 50%;
+          margin-bottom: 0;
+        }
+
+        &::after {
+          position: absolute;
+          top: 30px;
+          right: 0;
+          z-index: -1;
+          display: block;
+          width: calc(100% - 30px);
+          height: 100%;
+          border: 2px solid #222;
+          background-color: #fff;
+          content: '';
+
+          @media screen and (min-width:992px) {
+            width: 100%;
+            right: -30px;
+          }
+        }
+      }
+    }
+
+    &-text-area {
+      @media screen and (min-width:992px) {
+        width: 50%;
+        margin-left: 100px;
+        padding-right: 100px;
+        box-sizing: border-box;
+      }
+    }
+
+    &-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-family: Inter, Pretendard-Bold, sans-serif;
+      display: block;
+
+      @media screen and (min-width:992px) {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &-desc {
+      margin-bottom: 30px;
+
+      @media screen and (min-width:992px) {
+        margin-bottom: 50px;
+      }
+    }
+
+    &-button {
+      display: inline-block;
+      border: 1px solid #222;
+      padding: 8px 20px;
+      transition: all .2s;
+
+      &:hover {
+        color: #fff;
+        background-color: #222;
+      }
+    }
+
+    &-info {
+      &-list {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+
+      &-item {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+
+        &:not(:last-child) {
+          margin-right: 17px;
+          position: relative;
+
+          &::after {
+            display: block;
+            position: absolute;
+            right: -9px;
+            top: 4px;
+            width: 1px;
+            height: 12px;
+            background-color: #222;
+            content: '';
+          }
+        }
+      }
+
+      &-title {
+        margin-right: 4px;
+        font-family: Pretendard-Bold, sans-serif;
+      }
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px -5px -5px;
+
+    @media screen and (min-width:768px) {
+      margin: 95px -5px -5px;
+    }
+  }
+
+  &-item {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 5px;
+
+    @media screen and (min-width:768px) {
+      width: 25%;
+    }
+
+    @media screen and (min-width:1200px) {
+      width: 20%;
+    }
+  }
+
+  &-popup {
+    &-button {
+      width: 100%;
+      padding-top: 100%;
+      position: relative;
+      border-radius: 6px;
+      transition: all .2s;
+      box-sizing: border-box;
+      border: 1px solid #eee;
+      vertical-align: top;
+
+      $classes: (tason, markup_guide, humuson, targetmarketing, kyobo, interaction_booklist, interaction_coffee, xe_board, tonyryu, uniuni);
+      @each $class in $classes {
+        &.#{$class} {
+          background: url("../../assets/images/icon_#{$class}.jpg") no-repeat center center / cover;
+        }
+      }
+
+      &::before {
+        border-radius: 6px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        transition: all .2s;
+        content: '';
+      }
+
+      &:hover {
+        filter: grayscale(1);
+
+        &::before {
+          background-color: rgba(0, 0, 0, .8);
+        }
+
+        .work-popup-text {
+          color: #fff;
+        }
+      }
+    }
+
+    &-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: transparent;
+      transition: all .2s;
+      font-weight: bold;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  }
+}

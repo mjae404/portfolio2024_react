@@ -1,0 +1,79 @@
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+.main {
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  @media screen and (min-width:1200px) {
+    padding: 0;
+  }
+}
+
+.area {
+  max-width: 1200px;
+  width: 100%;
+  padding: 50px 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @media screen and (min-width:768px) {
+    min-height: 100vh;
+    padding: 100px 0;
+  }
+}
+
+.swiper {
+  .swiper-pagination-bullet-active {
+    background-color: #222;
+  }
+
+  .swiper-button {
+    &-prev,
+    &-next {
+      &::before {
+        display: block;
+        width: 50px;
+        height: 50px;
+        z-index: 100;
+        content: '';
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &-prev {
+      left: auto;
+      top: auto;
+      right: 50px;
+      bottom: 0;
+
+      &::before {
+        background: url("../../assets/icons/icon-arrow-left.svg") no-repeat center center / contain;
+      }
+    }
+
+    &-next {
+      top: auto;
+      right: 0;
+      bottom: 0;
+
+      &::before {
+        background: url("../../assets/icons/icon-arrow-right.svg") no-repeat center center / contain;
+      }
+    }
+  }
+
+  .swiper-pagination {
+    max-width: calc(100% - 100px);
+    text-align: left;
+  }
+}
