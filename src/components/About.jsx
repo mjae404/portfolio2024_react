@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../styles/components/About.module.scss";
 import minjee from "../assets/images/person.jpg";
+import minjeewebp from "../assets/images/person.webp";
 import {skillsData, aboutData} from "../assets/data/data";
 
 function About() {
@@ -10,6 +11,7 @@ function About() {
             <h2 className="blind">About.</h2>
             <div className={styles['about-image-area']}>
                 <picture className={styles['about-image-pic']}>
+                    <source srcSet={minjeewebp} type="image/webp" />
                     <img src={minjee} alt="" className={styles['about-image']} />
                 </picture>
             </div>
