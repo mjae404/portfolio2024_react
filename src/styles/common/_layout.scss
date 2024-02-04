@@ -31,17 +31,11 @@
 
 .swiper {
   .swiper-pagination-bullet {
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--text);
-    }
+    background-color: var(--text);
   }
 
   .swiper-pagination-bullet-active {
     background-color: var( --text);
-
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--text);
-    }
   }
 
   .swiper-button {

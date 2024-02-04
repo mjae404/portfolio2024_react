@@ -32,11 +32,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: var(--white) url("../../assets/icons/icon-arrow-right-link.svg") no-repeat center center / contain;
-
-    @media (prefers-color-scheme: dark) {
-      background: url("../../assets/icons/icon-arrow-right-link-w.svg") no-repeat center center / contain;
-    }
+    background: #fff url("../../assets/icons/icon-arrow-right-link.svg") no-repeat center center / contain;
   }
 
   &-wrap {
