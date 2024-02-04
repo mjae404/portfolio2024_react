@@ -1,3 +1,6 @@
+@import "../common/variables";
+@import "../common//mixin";
+
 .work {
   &-area {
     position: relative;
@@ -7,9 +10,13 @@
     font-size: 32px;
     margin-bottom: 30px;
     line-height: 1;
-    border-bottom: 7px solid #222;
+    border-bottom: 7px solid $lightText;
     text-transform: uppercase;
     display: inline-block;
+
+    @media (prefers-color-scheme: dark) {
+      border-bottom: 7px solid $darkText;
+    }
 
     @media screen and (min-width:992px) {
       font-size: 44px;
@@ -56,20 +63,22 @@
         }
 
         &::after {
-          position: absolute;
-          top: 30px;
-          right: 0;
+          @include position(absolute, 30px, 0);
           z-index: -1;
-          display: block;
           width: calc(100% - 30px);
           height: 100%;
-          border: 2px solid #222;
-          background-color: #fff;
+          border: 2px solid $lightText;
+          background-color: $lightBackgroundColor;
           content: '';
 
           @media screen and (min-width:992px) {
             width: 100%;
             right: -30px;
+          }
+
+          @media (prefers-color-scheme: dark) {
+            border: 2px solid $darkText;
+            background-color: $darkBackgroundColor;
           }
         }
       }
@@ -106,13 +115,23 @@
 
     &-button {
       display: inline-block;
-      border: 1px solid #222;
+      border: 1px solid $lightText;
       padding: 8px 20px;
       transition: all .2s;
 
       &:hover {
-        color: #fff;
-        background-color: #222;
+        color: $lightBackgroundColor;
+        background-color: $lightText;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        border: 1px solid $darkText;
+        color: $darkText;
+
+        &:hover {
+          color: $darkBackgroundColor;
+          background-color: $darkText;
+        }
       }
     }
 
@@ -133,14 +152,15 @@
           position: relative;
 
           &::after {
-            display: block;
-            position: absolute;
-            right: -9px;
-            top: 4px;
+            @include position(absolute, 4px, -9px);
             width: 1px;
             height: 12px;
-            background-color: #222;
+            background-color: $lightText;
             content: '';
+
+            @media (prefers-color-scheme: dark) {
+              background-color: $darkText;
+            }
           }
         }
       }
@@ -184,8 +204,12 @@
       border-radius: 6px;
       transition: all .2s;
       box-sizing: border-box;
-      border: 1px solid #eee;
+      border: 1px solid $lightBoarder;
       vertical-align: top;
+
+      @media (prefers-color-scheme: dark) {
+        border: 1px solid $darkBoarder;
+      }
 
       $classes: (tason, markup_guide, humuson, targetmarketing, kyobo, interaction_booklist, interaction_coffee, xe_board, tonyryu, uniuni);
       @each $class in $classes {
@@ -196,9 +220,7 @@
 
       &::before {
         border-radius: 6px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
+        @include position(absolute, 50%, null, null, 50%);
         transform: translate(-50%, -50%);
         width: 100%;
         height: 100%;
@@ -211,19 +233,17 @@
         filter: grayscale(1);
 
         &::before {
-          background-color: rgba(0, 0, 0, .8);
+          background-color: $dimmed;
         }
 
         .work-popup-text {
-          color: #fff;
+          color: $white;
         }
       }
     }
 
     &-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
+      @include position(absolute, 50%, null, null, 50%);
       transform: translate(-50%, -50%);
       width: 100%;
       height: 100%;

@@ -1,3 +1,6 @@
+@import "../common/variables";
+@import "../common//mixin";
+
 .about {
   &-area {
     @media screen and (min-width:992px) {
@@ -42,19 +45,22 @@
       }
 
       &::after {
-        position: absolute;
-        top: 30px;
-        right: 0;
+        @include position(absolute, 30px, 0);
         z-index: -1;
         display: block;
         width: calc(100% - 30px);
         height: 100%;
-        border: 2px solid #222;
-        background-color: #fff;
+        border: 2px solid $lightText;
+        background-color: $lightBackgroundColor;
         content: '';
 
         @media screen and (min-width:992px) {
           right: -30px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          border: 2px solid $darkText;
+          background-color: $darkBackgroundColor;
         }
       }
     }
@@ -92,7 +98,7 @@
   &-list {
     margin-top: 40px;
     padding-top: 40px;
-    border-top: 1px dashed #222;
+    border-top: 1px dashed $lightText;
   }
 
   &-item {
@@ -103,11 +109,9 @@
     }
 
     &-title {
-      position: absolute;
-      top: 0;
-      left: 0;
+      @include position(absolute, 0, null, null, 0);
       max-width: 80px;
-      border-bottom: 1px solid #222;
+      border-bottom: 1px solid $lightText;
       font-family: Pretendard-Bold, sans-serif;
     }
 
@@ -121,7 +125,7 @@
       }
 
       .point {
-        color: #222;
+        color: $lightText;
         font-weight: normal;
         display: block;
 
@@ -129,18 +133,24 @@
           margin-right: 5px;
           display: inline;
         }
+
+        @media (prefers-color-scheme: dark) {
+          color: $darkText;
+        }
       }
 
       &::before {
-        position: absolute;
-        top: 10px;
-        left: 85px;
+        @include position(absolute, 10px, null, null, 85px);
         border-radius: 50%;
         display: block;
         width: 10px;
         height: 1px;
-        background-color: #222;
+        background-color: $lightText;
         content: '';
+
+        @media (prefers-color-scheme: dark) {
+          background-color: $darkText;
+        }
       }
     }
   }

@@ -1,7 +1,8 @@
+@import "../common/variables";
+@import "../common//mixin";
+
 .navigation {
-  position: fixed;
-  top: 50%;
-  right: 50px;
+  @include position(fixed, 50%, 50px);
   transform: translateY(-50%);
   z-index: 1000;
   display: none;
@@ -29,7 +30,11 @@
     transition: color .4s;
 
     &:hover {
-      color: #222;
+      color: $lightText;
+
+      @media (prefers-color-scheme: dark) {
+        color: $darkText;
+      }
     }
 
     &::after {
@@ -38,10 +43,14 @@
       right: 0;
       transform: translateY(-50%);
       display: block;
-      background-color: #bbb;
+      background-color: $lightBoarder;
       height: 1px;
       width: 20px;
       content: '';
+
+      @media (prefers-color-scheme: dark) {
+        background-color: $darkBoarder;
+      }
 
       @at-root .navigation-item:nth-child(even) & {
         width: 12px;
@@ -49,10 +58,18 @@
     }
 
     @at-root .active & {
-      color: #222;
+      color: $lightText;
 
       &::after {
-        background-color: #222;
+        background-color: $lightText;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        color: $darkText;
+
+        &::after {
+          background-color: $white;
+        }
       }
     }
   }

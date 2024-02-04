@@ -1,3 +1,6 @@
+@import "../common/variables";
+@import "../common//mixin";
+
 .stack {
   &-area {
     position: relative;
@@ -17,7 +20,7 @@
   &-title {
     font-size: 32px;
     line-height: 1;
-    border-bottom: 7px solid #222;
+    border-bottom: 7px solid $lightText;
     text-transform: uppercase;
     display: inline-block;
 
@@ -26,9 +29,11 @@
     }
 
     @media screen and (min-width:1200px) {
-      position: absolute;
-      top: 350px;
-      left: 10px;
+      @include position(absolute, 350px, null, null, 10px);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      border-bottom: 7px solid $darkText;
     }
 
     .point {
@@ -63,9 +68,13 @@
       letter-spacing: 0.2px;
 
       .point {
-        color: #b34831;
+        color: $lightPointColor;
         font-size: 30px;
         line-height: 18px;
+
+        @media (prefers-color-scheme: dark) {
+          color: $darkPointColor;
+        }
       }
 
       @media screen and (min-width:576px) {
@@ -84,22 +93,28 @@
       margin-bottom: 5px;
 
       &::before {
-        display: block;
         width: 13px;
         height: 1px;
-        background-color: #222;
-        position: absolute;
-        top: 10px;
-        left: 0;
+        background-color: $lightText;
+        @include position(absolute, 10px, null, null, 0);
         content: '';
+
+        @media (prefers-color-scheme: dark) {
+          background-color: $darkText;
+        }
       }
     }
 
     &-icon {
       display: inline-block;
       width: 30px;
-      border: 1px solid #eee;
+      border: 1px solid $lightBoarder;
       border-radius: 3px;
+      margin-top: 15px;
+
+      @media (prefers-color-scheme: dark) {
+        border: 1px solid $darkBoarder;
+      }
 
       &:not(:last-child) {
         margin-right: 5px;

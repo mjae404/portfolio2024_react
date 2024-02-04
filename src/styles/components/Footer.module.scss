@@ -1,12 +1,20 @@
+@import "../common/variables";
+@import "../common//mixin";
+
+
 .footer {
   &-copyright {
     max-width: 1200px;
     width: 100%;
-    border-top: 1px dashed #ccc;
+    border-top: 1px dashed $lightBoarder;
     text-align: center;
     padding: 20px;
     display: block;
     margin: 0 auto;
     box-sizing: border-box;
+
+    @media (prefers-color-scheme: dark) {
+      border-top: 1px dashed $darkBoarder;
+    }
   }
 }

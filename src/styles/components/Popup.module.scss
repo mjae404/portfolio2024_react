@@ -1,10 +1,11 @@
+@import "../common/variables";
+@import "../common//mixin";
+
 .popup {
-  position: fixed;
-  top: 0;
-  left: 0;
+  @include position(fixed, 0, null, null, 0);
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, .6);
+  background-color: $dimmed;
   z-index: 10000;
   display: none;
 
@@ -13,9 +14,7 @@
   }
 
   &-close-button {
-    position: fixed;
-    top: calc(50% - 185px);
-    right: 15px;
+    @include position(fixed, calc(50% - 185px), 15px);
     width: 25px;
     height: 25px;
     background:  url("../../assets/icons/icon-close.svg") no-repeat center center / contain;
@@ -29,23 +28,23 @@
   }
 
   &-visit-button {
-    position: absolute;
-    top: 25px;
-    right: 25px;
+    @include position(absolute, 25px, 25px);
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: #fff url("../../assets/icons/icon-arrow-right-link.svg") no-repeat center center / contain;
+    background: $white url("../../assets/icons/icon-arrow-right-link.svg") no-repeat center center / contain;
+
+    @media (prefers-color-scheme: dark) {
+      background: url("../../assets/icons/icon-arrow-right-link-w.svg") no-repeat center center / contain;
+    }
   }
 
   &-wrap {
+    @include position(fixed, 50%, null, null, 50%);
     border-radius: 6px;
     overflow: hidden;
-    position: fixed;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: $white;
     padding: 25px;
     box-sizing: border-box;
     width: calc(100% - 30px);
@@ -54,6 +53,11 @@
     @media screen and (min-width:992px) {
       width: 700px;
       height: 500px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $darkBackgroundColor;
+      color: $darkText;
     }
   }
 
@@ -83,9 +87,7 @@
     font-family: Pretendard-Bold, sans-serif;
     padding-right: 35px;
     box-sizing: border-box;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    @include ellipsis;
 
     @media screen and (min-width:992px) {
       font-size: 20px;
@@ -109,14 +111,15 @@
         position: relative;
 
         &::after {
-          display: block;
-          position: absolute;
-          right: -9px;
-          top: 4px;
+          @include position(absolute, 4px, -9px);
           width: 1px;
           height: 12px;
-          background-color: #222;
+          background-color: $lightText;
           content: '';
+
+          @media (prefers-color-scheme: dark) {
+            background-color: $darkText;
+          }
         }
       }
     }
@@ -140,9 +143,13 @@
     width: 100%;
     min-width: 500px;
     border-collapse: collapse;
-    border: 1px solid #eee;
+    border: 1px solid $lightBoarder;
     font-size: 14px;
     box-sizing: border-box;
+
+    @media (prefers-color-scheme: dark) {
+      border: 1px solid $darkBoarder;
+    }
 
     &-wrap {
       margin-top: 20px;
@@ -151,10 +158,16 @@
     td {
       padding: 10px;
       min-height: 40px;
-      border-left: 1px solid #eee;
-      border-right: 1px solid #eee;
-      border-bottom: 1px solid #eee;
+      border-left: 1px solid $lightBoarder;
+      border-right: 1px solid $lightBoarder;
+      border-bottom: 1px solid $lightBoarder;
       box-sizing: border-box;
+
+      @media (prefers-color-scheme: dark) {
+        border-left: 1px solid $darkBoarder;
+        border-right: 1px solid $darkBoarder;
+        border-bottom: 1px solid $darkBoarder;
+      }
 
       &:first-child {
         border-left: none;
@@ -165,18 +178,27 @@
       }
 
       &.border-bottom {
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid $lightBoarder;
+
+        @media (prefers-color-scheme: dark) {
+          border-bottom: 1px solid $darkBoarder;
+        }
       }
     }
 
     th {
-      background-color: #b34831;
       padding: 10px;
       min-height: 40px;
-      color:#fff;
+      background-color: $lightPointColor;
+      color: $white;
       font-weight: bold;
       font-size: 16px;
       box-sizing: border-box;
+
+      @media (prefers-color-scheme: dark) {
+        background-color: $darkPointColor;
+        color: $darkText;
+      }
     }
 
     &-wrap {
@@ -185,13 +207,23 @@
     }
 
     &-link {
-      color: #b34831;
-      border-bottom: 1px dashed #b34831;
+      color: $lightPointColor;
+      border-bottom: 1px dashed $lightPointColor;
+
+      @media (prefers-color-scheme: dark) {
+        color: $darkPointColor;
+        border-bottom: 1px dashed $darkPointColor;
+      }
 
       &:hover {
-        background-color: #b34831;
-        color: #fff;
+        background-color: $lightPointColor;
+        color: $white;
         border: none;
+
+        @media (prefers-color-scheme: dark) {
+          background-color: $darkPointColor;
+          color: $darkBackgroundColor;
+        }
       }
     }
   }

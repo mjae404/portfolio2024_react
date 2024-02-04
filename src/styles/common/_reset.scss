@@ -1,3 +1,17 @@
+:root {
+  --background: transparent;
+  --text: #222;
+  --anchor-text: #b34831;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #222;
+    --text: #efefef;
+    --anchor-text: #ffae00;
+  }
+}
+
 html {
   font-size: 10px;
 }
@@ -10,6 +24,8 @@ body {
   line-height: 1.5;
   word-break: keep-all;
   font-family: 'Inter', 'Pretendard-Regular', sans-serif;
+  background: var(--background);
+  color: var(--text);
 }
 
 h1, h2, h3, h4, h5, h6 {

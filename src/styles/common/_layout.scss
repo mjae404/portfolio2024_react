@@ -30,8 +30,18 @@
 }
 
 .swiper {
+  .swiper-pagination-bullet {
+    @media (prefers-color-scheme: dark) {
+      background-color: $darkText;
+    }
+  }
+
   .swiper-pagination-bullet-active {
-    background-color: #222;
+    background-color: $lightText;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $darkText;
+    }
   }
 
   .swiper-button {
@@ -58,6 +68,10 @@
 
       &::before {
         background: url("../../assets/icons/icon-arrow-left.svg") no-repeat center center / contain;
+
+        @media (prefers-color-scheme: dark) {
+          background: url("../../assets/icons/icon-arrow-left-w.svg") no-repeat center center / contain;
+        }
       }
     }
 
@@ -68,6 +82,10 @@
 
       &::before {
         background: url("../../assets/icons/icon-arrow-right.svg") no-repeat center center / contain;
+      
+        @media (prefers-color-scheme: dark) {
+          background: url("../../assets/icons/icon-arrow-right-w.svg") no-repeat center center / contain;
+        }
       }
     }
   }
