@@ -38,7 +38,7 @@ function PopupXeboard() {
                     <img src={xeboard03} alt="개인 리액트 프로젝트용 웹퍼블리싱 가이드 페이지 작업 화면" className={styles['popup-image']} />
                 </picture>
             </div>
-            <a href="http://mjae.me" target="_blank" rel="noreferrer noopener" className={styles['popup-visit-button']}>
+            <a href="https://github.com/xpressengine/plugin-board/tree/develop" target="_blank" rel="noreferrer noopener" className={styles['popup-visit-button']}>
                 <span className="blind">웹사이트 방문하기</span>
             </a>
         </>
