@@ -50,17 +50,12 @@
         display: block;
         width: calc(100% - 30px);
         height: 100%;
-        border: 2px solid $lightText;
-        background-color: $lightBackgroundColor;
+        border: 2px solid var(--text);
+        background-color: var(--background);
         content: '';
 
         @media screen and (min-width:992px) {
           right: -30px;
-        }
-
-        @media (prefers-color-scheme: dark) {
-          border: 2px solid $darkText;
-          background-color: $darkBackgroundColor;
         }
       }
     }
@@ -98,7 +93,7 @@
   &-list {
     margin-top: 40px;
     padding-top: 40px;
-    border-top: 1px dashed $lightText;
+    border-top: 1px dashed var(--text);
   }
 
   &-item {
@@ -111,7 +106,7 @@
     &-title {
       @include position(absolute, 0, null, null, 0);
       max-width: 80px;
-      border-bottom: 1px solid $lightText;
+      border-bottom: 1px solid var(--text);
       font-family: Pretendard-Bold, sans-serif;
     }
 
@@ -125,17 +120,13 @@
       }
 
       .point {
-        color: $lightText;
+        color: var(--text);
         font-weight: normal;
         display: block;
 
         @media screen and (min-width:576px) {
           margin-right: 5px;
           display: inline;
-        }
-
-        @media (prefers-color-scheme: dark) {
-          color: $darkText;
         }
       }
 
@@ -145,12 +136,8 @@
         display: block;
         width: 10px;
         height: 1px;
-        background-color: $lightText;
+        background-color: var(--text);
         content: '';
-
-        @media (prefers-color-scheme: dark) {
-          background-color: $darkText;
-        }
       }
     }
   }

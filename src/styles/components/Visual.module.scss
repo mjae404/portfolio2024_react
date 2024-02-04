@@ -35,11 +35,7 @@
 
       &-text {
         font-size: 14px;
-        color: $black;
-
-        @media (prefers-color-scheme: dark) {
-          color: $white;
-        }
+        color: var(--fill);
       }
 
       .mouse {
@@ -48,25 +44,17 @@
         width: 25px;
         height: 40px;
         box-sizing: border-box;
-        border: 2px solid $black;
+        border: 2px solid var(--fill);
         border-radius: 23px;
-
-        @media (prefers-color-scheme: dark) {
-          border: 2px solid $white;
-        }
 
         span {
           @include position(absolute, 29%, null, null, 50%);
           width: 8px;
           height: 8px;
           margin: -4px 0 0 -4px;
-          background: $black;
+          background: var(--fill);
           border-radius: 50%;
           animation: ani-mouse 2.5s linear infinite;
-
-          @media (prefers-color-scheme: dark) {
-            background: $white;
-          }
         }
       }
     }
@@ -126,7 +114,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: $lightBackgroundColor;
+    background-color: var(--white);
 
     @media screen and (min-width:576px) {
       width: 70vw;
@@ -142,10 +130,6 @@
       width: 650px;
       height: 650px;
     }
-
-    @media (prefers-color-scheme: dark) {
-      background-color: $darkBackgroundColor;
-    }
   }
 
   &-outer {
@@ -155,33 +139,21 @@
       border-width: 1px;
       border-color: rgba(9, 56, 62, 0.1);
       animation: ellipsesOrbit 15s ease-in-out infinite;
-
-      @media (prefers-color-scheme: dark) {
-        border-color: $darkBoarder;
-      }
     }
 
     &-thick {
       width: 99.5%;
       height: 99.5%;
-      border-color: $lightText transparent;
+      border-color: var(--text) transparent;
       border-width: 2px;
       transform: rotate(-45deg);
       animation: ellipsesRotate 15s ease-in-out infinite;
-
-      @media (prefers-color-scheme: dark) {
-      border-color: $darkText transparent;
-      }
     }
   }
 
   &-orbit {
     display: none;
-    border-color: $lightText;
-
-    @media (prefers-color-scheme: dark) {
-      border-color: $darkText;
-    }
+    border-color: var(--text);
 
     @media screen and (min-width:992px) {
       display: inline-block;
@@ -193,7 +165,7 @@
 
     &:before {
       border-radius: 50%;
-      background-color: $lightText;
+      background-color: var(--text);
       margin: 0 auto;
       @include position(absolute, 50%, 0, null, 0);
       transform: translateY(-50%);
@@ -202,10 +174,6 @@
       @media screen and (min-width:992px) {
         width: 16px;
         height: 16px;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        background-color: $darkText;
       }
     }
   }

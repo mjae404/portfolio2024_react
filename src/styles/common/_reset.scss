@@ -1,14 +1,20 @@
 :root {
   --background: transparent;
+  --white: #fff;
   --text: #222;
-  --anchor-text: #b34831;
+  --point-color: #b34831;
+  --border: #ccc;
+  --fill: #222;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #222;
+    --white: #222;
     --text: #efefef;
-    --anchor-text: #ffae00;
+    --point-color: #ffae00;
+    --border: #999;
+    --fill: #fff;
   }
 }
 
@@ -48,7 +54,7 @@ dd {
 }
 
 a {
-  color: #000;
+  color: var(--text);
   text-decoration: none;
 }
 

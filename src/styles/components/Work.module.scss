@@ -10,13 +10,9 @@
     font-size: 32px;
     margin-bottom: 30px;
     line-height: 1;
-    border-bottom: 7px solid $lightText;
+    border-bottom: 7px solid var(--text);
     text-transform: uppercase;
     display: inline-block;
-
-    @media (prefers-color-scheme: dark) {
-      border-bottom: 7px solid $darkText;
-    }
 
     @media screen and (min-width:992px) {
       font-size: 44px;
@@ -67,18 +63,13 @@
           z-index: -1;
           width: calc(100% - 30px);
           height: 100%;
-          border: 2px solid $lightText;
-          background-color: $lightBackgroundColor;
+          border: 2px solid var(--text);
+          background-color: var(--background);
           content: '';
 
           @media screen and (min-width:992px) {
             width: 100%;
             right: -30px;
-          }
-
-          @media (prefers-color-scheme: dark) {
-            border: 2px solid $darkText;
-            background-color: $darkBackgroundColor;
           }
         }
       }
@@ -115,23 +106,13 @@
 
     &-button {
       display: inline-block;
-      border: 1px solid $lightText;
+      border: 1px solid var(--text);
       padding: 8px 20px;
       transition: all .2s;
 
       &:hover {
-        color: $lightBackgroundColor;
-        background-color: $lightText;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        border: 1px solid $darkText;
-        color: $darkText;
-
-        &:hover {
-          color: $darkBackgroundColor;
-          background-color: $darkText;
-        }
+        color: var(--background);
+        background-color: var(--text);
       }
     }
 
@@ -155,12 +136,8 @@
             @include position(absolute, 4px, -9px);
             width: 1px;
             height: 12px;
-            background-color: $lightText;
+            background-color: var(--text);
             content: '';
-
-            @media (prefers-color-scheme: dark) {
-              background-color: $darkText;
-            }
           }
         }
       }
@@ -204,12 +181,8 @@
       border-radius: 6px;
       transition: all .2s;
       box-sizing: border-box;
-      border: 1px solid $lightBoarder;
+      border: 1px solid var(--border);
       vertical-align: top;
-
-      @media (prefers-color-scheme: dark) {
-        border: 1px solid $darkBoarder;
-      }
 
       $classes: (tason, markup_guide, humuson, targetmarketing, kyobo, interaction_booklist, interaction_coffee, xe_board, tonyryu, uniuni);
       @each $class in $classes {
@@ -237,7 +210,7 @@
         }
 
         .work-popup-text {
-          color: $white;
+          color: #fff;
         }
       }
     }
