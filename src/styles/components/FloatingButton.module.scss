@@ -1,0 +1,43 @@
+.floating-button {
+    border: 1px solid var(--border);
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: var(--background);
+    transition: all .2s;
+
+    &:not(:last-child) {
+        margin-bottom: 5px;
+    }
+
+    $icons: (top, mode);
+    @each $icon in $icons {
+        &.#{$icon} {
+            background: url("../../assets/icons/icon-#{$icon}.svg") no-repeat center center / 20px 20px;
+
+            @media (prefers-color-scheme: dark) {
+                background: url("../../assets/icons/icon-#{$icon}-w.svg") no-repeat center center / 20px 20px;
+            }
+
+            @at-root .light & {
+                background: url("../../assets/icons/icon-#{$icon}.svg") no-repeat center center / 20px 20px !important;
+            }
+
+            @at-root .dark & {
+                background: url("../../assets/icons/icon-#{$icon}-w.svg") no-repeat center center / 20px 20px !important;
+            }
+        }
+    }
+
+    &-container {
+        position: fixed;
+        right: 50px;
+        bottom: 20px;
+        display: none;
+
+        @media screen and (min-width:1300px) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

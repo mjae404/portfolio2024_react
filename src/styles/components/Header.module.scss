@@ -47,15 +47,9 @@
       overflow: hidden;
       color: transparent;
 
-      $icons: (github, email);
-      @each $icon in $icons {
-        &.#{$icon} {
-          background: url("../../assets/icons/icon-#{$icon}.svg") no-repeat center center / contain;
-
-          @media (prefers-color-scheme: dark) {
-            background: url("../../assets/icons/icon-#{$icon}-w.svg") no-repeat center center / contain;
-          }
-        }
+      svg {
+        width: 100%;
+        height: 100%;
       }
     }
   }
