@@ -29,33 +29,56 @@ const FloatingButton = () => {
     });
   };
 
-  useEffect(() => {
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDarkMode(prefersDarkMode);
-  }, []);
-
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
 
   useEffect(() => {
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setIsDarkMode(prefersDarkMode);
+  }, []);
+
+  useEffect(() => {
     document.body.classList.toggle('dark', isDarkMode);
     document.body.classList.toggle('light', !isDarkMode);
+  }, [isDarkMode]);
+
+  useEffect(() => {
     document.getElementById('floatArea').classList.toggle(styles['dark'], isDarkMode);
     document.getElementById('floatArea').classList.toggle(styles['light'], !isDarkMode);
   }, [isDarkMode]);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const updateThemeMode = (e) => {
+      setIsDarkMode(e.matches);
+    };
+
+    mediaQuery.addEventListener('change', updateThemeMode);
+
+    return () => {
+      mediaQuery.removeEventListener('change', updateThemeMode);
+    };
+  }, []);
+
   return (
     <div id="floatArea" className={styles['floating-button-container']}>
-        <button type="button"
-      className={`${styles['floating-button']} ${styles.top}`}
-      onClick={scrollToTop}
-      style={{ opacity: isVisible ? 1 : 0 }}>
-            <span className="blind">모드 변경</span>
-            </button>
-        <button type="button" className={`${styles['floating-button']} ${styles.mode}`} onClick={toggleTheme}>
+      <button
+        type="button"
+        className={`${styles['floating-button']} ${styles.top}`}
+        onClick={scrollToTop}
+        style={{ opacity: isVisible ? 1 : 0 }}
+      >
         <span className="blind">모드 변경</span>
-        </button>
+      </button>
+      <button
+        type="button"
+        className={`${styles['floating-button']} ${styles.mode}`}
+        onClick={toggleTheme}
+      >
+        <span className="blind">모드 변경</span>
+      </button>
     </div>
   );
 };
