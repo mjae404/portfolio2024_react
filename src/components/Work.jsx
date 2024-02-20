@@ -65,7 +65,7 @@ function Work() {
             <ul className={styles['work-list']}>
                 {popupData.map((popup) => (
                     <li className={styles['work-item']} key={popup.id}>
-                        <button type="button" className={`${styles['work-popup-button']} ${styles[popup.class]}`} onClick={() => openPopup(popup.id)} aria-haspopup="true" aria-controls={popup.id} aria-expanded={popup.id === activePopup}>
+                        <button type="button" className={`${styles['work-popup-button']} ${styles[popup.class]}`} onClick={() => openPopup(popup.class)} aria-haspopup="true" aria-controls={popup.id} aria-expanded={popup.id === activePopup}>
                             <span className={styles['work-popup-text']}>{popup.text}</span>
                         </button>
                         <Popup
