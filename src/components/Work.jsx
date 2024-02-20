@@ -10,22 +10,14 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 function Work() {
-    const [popups, setPopups] = useState(popupData);
+    const [activePopup, setActivePopup] = useState(null);
 
     const openPopup = (id) => {
-        setPopups((prevPopups) =>
-            prevPopups.map((popup) =>
-                popup.id === id ? { ...popup, isOpen: true } : popup
-            )
-        );
+        setActivePopup(id);
     };
 
-    const closePopup = (id) => {
-        setPopups((prevPopups) =>
-            prevPopups.map((popup) =>
-                popup.id === id ? { ...popup, isOpen: false } : popup
-            )
-        );
+    const closePopup = () => {
+        setActivePopup(null);
     };
 
     return (
@@ -71,15 +63,16 @@ function Work() {
                 ))}
             </Swiper>
             <ul className={styles['work-list']}>
-                {popups.map((popup) => (
+                {popupData.map((popup) => (
                     <li className={styles['work-item']} key={popup.id}>
-                        <button type="button" className={`${styles['work-popup-button']} ${styles[popup.class]}`} onClick={() => openPopup(popup.id)}>
+                        <button type="button" className={`${styles['work-popup-button']} ${styles[popup.class]}`} onClick={() => openPopup(popup.id)} aria-haspopup="true" aria-controls={popup.id} aria-expanded={popup.id === activePopup}>
                             <span className={styles['work-popup-text']}>{popup.text}</span>
                         </button>
                         <Popup
-                            isOpen={popup.isOpen}
+                            isOpen={popup.id === activePopup}
                             contents={popup.contents}
-                            onClose={() => closePopup(popup.id)}
+                            onClose={closePopup}
+                            popupId={popup.class}
                         />
                     </li>
                 ))}

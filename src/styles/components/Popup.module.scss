@@ -1,16 +1,21 @@
 @import "../common/variables";
-@import "../common//mixin";
+@import "../common/mixin";
 
 .popup {
   @include position(fixed, 0, null, null, 0);
   width: 100vw;
   height: 100vh;
-  background-color: $dimmed;
   z-index: 10000;
   display: none;
 
   &.active {
     display: block;
+  }
+
+  &-dimmed {
+    width: 100vw;
+    height: 100vh;
+    background-color: $dimmed;
   }
 
   &-close-button {

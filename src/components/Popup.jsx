@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styles from "../styles/components/Popup.module.scss";
 
-function Popup({ contents, onClose, isOpen }) {
+function Popup({ contents, onClose, isOpen, popupId }) {
     const popupRef = useRef(null);
 
     useEffect(() => {
@@ -10,7 +10,7 @@ function Popup({ contents, onClose, isOpen }) {
         let animationFrameId;
 
         const animateOpacity = (timestamp) => {
-            const duration = 5000; // Animation duration in milliseconds
+            const duration = 5000;
             const startOpacity = parseFloat(popupElement.style.opacity) || 0;
             const endOpacity = isOpen ? 1 : 0;
             const progress = (timestamp - startTime) / duration;
@@ -42,16 +42,17 @@ function Popup({ contents, onClose, isOpen }) {
     }, [isOpen]);
 
     return (
-        <dialog ref={popupRef} className={`${styles['popup']} ${isOpen ? styles['active'] : ''}`} onClick={onClose}>
+        <div ref={popupRef} className={`${styles['popup']} ${isOpen ? styles['active'] : ''}`} aria-labelledby={popupId} aria-live="polite">
+            <div className={styles['popup-dimmed']} onClick={onClose}></div>
             <div className={styles['popup-wrap']}>
                 <div className={styles['popup-inner']}>
                     {contents}
                 </div>
             </div>
             <button type="button" className={styles['popup-close-button']} onClick={onClose}>
-                <span className="blind">닫기 버튼</span>
+                <span className="blind">닫기</span>
             </button>
-        </dialog>
+        </div>
     );
 }
 
