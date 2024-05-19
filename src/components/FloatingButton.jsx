@@ -66,11 +66,9 @@ const FloatingButton = () => {
     <div id="floatArea" className={styles['floating-button-container']}>
       <button
         type="button"
-        className={`${styles['floating-button']} ${styles.top}`}
-        onClick={scrollToTop}
-        style={{ opacity: isVisible ? 1 : 0 }}
-      >
-        <span className="blind">모드 변경</span>
+        className={`${styles['floating-button']} ${styles.top} ${isVisible ? "" : styles['hidden']}`}
+        onClick={scrollToTop}>
+        <span className="blind">위로 가기</span>
       </button>
       <button
         type="button"

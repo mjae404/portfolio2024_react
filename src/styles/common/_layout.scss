@@ -68,7 +68,8 @@
         }
 
         @at-root .light & {
-          background: url("../../assets/icons/icon-arrow-left.svg") no-repeat center center / contain;        }
+          background: url("../../assets/icons/icon-arrow-left.svg") no-repeat center center / contain;
+        }
 
         @at-root .dark & {
           background: url("../../assets/icons/icon-arrow-left-w.svg") no-repeat center center / contain;

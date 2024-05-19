@@ -3,7 +3,7 @@
     width: 40px;
     height: 40px;
     border-radius: 6px;
-    background-color: var(--background);
+    background-color: var(--white);
     transition: all .2s;
 
     &:not(:last-child) {
@@ -13,31 +13,30 @@
     $icons: (top, mode);
     @each $icon in $icons {
         &.#{$icon} {
-            background: url("../../assets/icons/icon-#{$icon}.svg") no-repeat center center / 20px 20px;
-
-            @media (prefers-color-scheme: dark) {
-                background: url("../../assets/icons/icon-#{$icon}-w.svg") no-repeat center center / 20px 20px;
-            }
-
             @at-root .light & {
-                background: url("../../assets/icons/icon-#{$icon}.svg") no-repeat center center / 20px 20px !important;
+                background: var(--white) url("../../assets/icons/icon-#{$icon}.svg") no-repeat center center / 20px 20px;
             }
 
             @at-root .dark & {
-                background: url("../../assets/icons/icon-#{$icon}-w.svg") no-repeat center center / 20px 20px !important;
+                background: var(--white) url("../../assets/icons/icon-#{$icon}-w.svg") no-repeat center center / 20px 20px;
             }
         }
     }
 
+    &.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
     &-container {
         position: fixed;
-        right: 50px;
+        right: 20px;
         bottom: 20px;
-        display: none;
+        display: flex;
+        flex-direction: column;
 
         @media screen and (min-width:1300px) {
-            display: flex;
-            flex-direction: column;
+            right: 50px;
         }
     }
 }

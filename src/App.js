@@ -23,7 +23,7 @@ function App() {
               <Contact/>
           </main>
         <Footer/>
-        <FloatingButton />
+          <FloatingButton />
       </>
   );
 }

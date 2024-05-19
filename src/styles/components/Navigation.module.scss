@@ -34,9 +34,7 @@
     }
 
     &::after {
-      position: absolute;
-      top: 50%;
-      right: 0;
+      @include position(absolute, 50%, 0);
       transform: translateY(-50%);
       display: block;
       background-color: var(--border);
