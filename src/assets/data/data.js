@@ -35,6 +35,7 @@ const aboutData = [
     {
         title: '경력',
         items: [
+            { company: 'TmaxCloud', role: 'OS연구본부 UX팀 UX 연구원', date: '2024.06 - 재직중' },
             { company: '휴머스온', role: '프런트엔드개발파트 퍼블리셔', date: '2022.11 - 2023.12' },
             { company: '교보문고', role: 'CX혁신팀 퍼블리셔', date: '2022.07 - 2022.11' },
             { company: '티몬', role: '마크업 개발팀 마크업 개발자', date: '2021.02 - 2022.06' },
