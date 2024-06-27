@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "../styles/components/Visual.module.scss";
 import Particle from "./Particle";
+import locationImage from "../assets/images/main-visual-location.svg";
+import visualLogo from "../assets/images/main-visual-logo.svg";
 function Visual() {
 
     return (
@@ -15,10 +17,12 @@ function Visual() {
                     <div className={`${styles.ellipses} ${styles['ellipses-outer-thick']}`}></div>
                 </div>
                 <div className={styles['visual-text-wrap']}>
-                    <strong className={styles['visual-title']}>mjaedot</strong>
+                    <img src={visualLogo} alt="mjaedot" className={styles['visual-title']}/>
                     <p className={styles['visual-text']}>markup developer portfolio</p>
                 </div>
-                <p className={styles['ellipses-coords']}>N 49° 16' 35.173" / W 0° 42' 11.30"</p>
+                <div className={styles['ellipses-coords']}>
+                    <img src={locationImage} className={styles['ellipses-coords-image']}/>
+                </div>
                 <div className={styles['scroll-btn']}>
                     <div className={styles['scroll-btn-link']}>
                     <span className={styles['mouse']}>

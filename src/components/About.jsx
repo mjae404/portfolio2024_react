@@ -3,6 +3,7 @@ import styles from "../styles/components/About.module.scss";
 import minjee from "../assets/images/person.jpg";
 import minjeewebp from "../assets/images/person.webp";
 import {skillsData, aboutData} from "../assets/data/data";
+import titleMinjeeKim from "../assets/images/title_minjeekim.svg";
 
 function About() {
 

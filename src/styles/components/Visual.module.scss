@@ -61,28 +61,14 @@
   }
 
   &-title {
-    font-weight: normal;
-    text-align: center;
-    font-family: 'Abril Fatface', serif;
-    font-style: italic;
     display: block;
-    font-size: 40px;
-
-    @media screen and (min-width:576px) {
-      font-size: 60px;
-    }
-
-    @media screen and (min-width:768px) {
-      font-size: 70px;
-    }
 
     @media screen and (min-width:992px) {
-      font-size: 80px;
+      width: 500px;
     }
   }
 
   &-text {
-    letter-spacing: 1.7px;
     font-size: 14px;
 
     @media screen and (min-width:768px) {
@@ -179,11 +165,19 @@
   }
 
   &-coords {
-    @include position(absolute, null, null, 20px, -110px);
-    font-size: 10px;
+    @include position(absolute, null, null, 20px, 0);
+    //font-size: 10px;
     transform: rotate(-90deg) translateX(50%);
-    letter-spacing: 2px;
+    //letter-spacing: 2px;
     display: none;
+    z-index: 100;
+    vertical-align: top;
+
+    &-image {
+      width: 200px;
+      height: auto;
+      vertical-align: top;
+    }
 
     @media screen and (min-width:1200px) {
       display: inline-block;

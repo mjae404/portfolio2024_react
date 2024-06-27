@@ -12,7 +12,7 @@ function Stack() {
             <dl className={styles['stack-list']}>
                 {stacksData.map((stack, index) => (
                     <div key={index} className={styles['stack-item']}>
-                        <dt className={styles['stack-item-title']}>{stack.title}<span className={styles['point']}>.</span></dt>
+                        <dt className={styles['stack-item-title']}>{stack.title}</dt>
                         {stack.points.map((point, index) => (
                             <dd key={index} className={styles['stack-item-desc']}>{point}</dd>
                         ))}
