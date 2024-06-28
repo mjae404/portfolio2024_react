@@ -21,7 +21,7 @@ function Visual() {
                     <p className={styles['visual-text']}>markup developer portfolio</p>
                 </div>
                 <div className={styles['ellipses-coords']}>
-                    <img src={locationImage} className={styles['ellipses-coords-image']}/>
+                    <img src={locationImage} alt="" className={styles['ellipses-coords-image']}/>
                 </div>
                 <div className={styles['scroll-btn']}>
                     <div className={styles['scroll-btn-link']}>

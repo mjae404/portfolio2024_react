@@ -128,12 +128,12 @@ const workData = [
     {
         webpSource: portfolio2023webp,
         imageSource: portfolio2023,
-        altText: '개인 포트폴리오 사이트 (2022) 화면',
-        title: '개인 포트폴리오 사이트 (2022)',
-        period: '2022.08',
+        altText: '개인 포트폴리오 사이트 (2023) 화면',
+        title: '개인 포트폴리오 사이트 (2023)',
+        period: '2023.04',
         contribution: '100%',
-        description: '개인 포트폴리오 사이트 2022 버전입니다. 동일한 디자인의 리액트 버전은 깃허브에서 확인하실 수 있습니다.',
-        link: 'https://mjaedot.com/portfolio2022/',
+        description: '개인 포트폴리오 사이트 2023 버전입니다.',
+        link: 'http://2023.mjaedot.com/',
     },
     {
         webpSource: portfolio2021webp,

@@ -75,9 +75,7 @@
       height: 8px;
       background-color: var(--point-color);
       border-radius: 50%;
-      position: absolute;
-      right: -12px;
-      bottom: 10px;
+      @include position (absolute, null, -12px, 10px);
       content: '';
     }
   }
@@ -125,7 +123,7 @@
     &-contents {
       padding-left: 100px;
       position: relative;
-      color: #acacac;
+      color: #aaa;
 
       &:not(:last-child) {
         margin-bottom: 5px;
