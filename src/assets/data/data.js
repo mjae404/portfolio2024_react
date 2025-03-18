@@ -37,7 +37,6 @@ const aboutData = [
         items: [
             { company: 'TmaxCloud', role: 'CL연구2본부 CL2-2-2팀 UX 매니저', date: '2024.06 - 2024.10' },
             { company: '휴머스온', role: '프런트엔드개발파트 퍼블리셔', date: '2022.11 - 2023.12' },
-            { company: '교보문고', role: 'CX 혁신팀 퍼블리셔', date: '2022.07 - 2022.11' },
             { company: '티몬', role: '마크업 개발팀 마크업 개발자', date: '2021.02 - 2022.06' },
             { company: '엑스이허브', role: 'UI개발팀 퍼블리셔', date: '2020.03 - 2021.01' },
         ],
